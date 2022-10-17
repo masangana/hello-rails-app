@@ -3,9 +3,17 @@
 #
 # Examples:
 #
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+#   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
+#   Character.create(name: "Luke", movie: movies.first)
 
-5.times do |i|
-	Greeting.create message: "Hello, ##{i}!"
-end
+p "Seeding data..."
+p "Creating messages..."
+
+Message.create(greeting: "Hi there!")
+Message.create(greeting: "Morning!")
+Message.create(greeting: "It's good to see you!")
+Message.create(greeting: "What's up?")
+Message.create(greeting: "How are you?")
+
+p "Seeding data... DONE!"
+p "Created #{Message.count} messages!"

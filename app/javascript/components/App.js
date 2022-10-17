@@ -1,23 +1,18 @@
-import React from "react";
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-import LoadingBar from "react-redux-loading-bar";
-import Greeting from "./Greeting";
-import store from "../redux/configureStore";
-import { Provider } from "react-redux";
+import React from 'react';
+import { Routes, Route, Link } from 'react-router-dom';
+import { Greeting } from './Greeting';
 
-const App = () => (
-  <Provider store={store}>
-    <BrowserRouter>
-      <LoadingBar />
+function App() {
+  return (
+    <>
+      <nav>
+        <Link to="/"></Link>
+      </nav>
       <Routes>
-        <Route path="/greeting" element={<Greeting />} />
-        <Route
-          path="/"
-          element={<Link to="/greeting">Get random greeting</Link>}
-        />
+        <Route path="/" element={<Greeting />} />
       </Routes>
-    </BrowserRouter>
-  </Provider>
-);
+    </>
+  );
+}
 
 export default App;

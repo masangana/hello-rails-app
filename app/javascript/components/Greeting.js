@@ -11,7 +11,7 @@ export const Greeting = () => {
 
   return (
     <div>
-      <h2>List of Messages</h2>
+      <h2>Messages</h2>
       {message.loading && <div>Loading...</div>}
       {!message.loading && message.error ? (
         <div>Error: {message.error}</div>
@@ -20,9 +20,7 @@ export const Greeting = () => {
         <ul>
           {message.messages.map((message) => (
             <li key={message.greeting}>
-              <span className="badge rounded-pill text-bg-success">
                 {message.greeting}
-              </span>
             </li>
           ))}
         </ul>
